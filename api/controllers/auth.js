@@ -43,7 +43,7 @@ export const login = async (req, res, next) => {
     const { password, ...otherDetails } = organization._doc;
     // console.log(token);
     res
-      .cookie("access_token", token, { httpOnly: true })
+      .cookie("access_token", token, { httpOnly: true } )
       .status(200)
       .json(otherDetails);
   } catch (error) {
