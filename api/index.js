@@ -24,7 +24,7 @@ mongoose.set("strictQuery", true);
 const connect = async () => {
   try {
     await mongoose
-      .connect(process.env.URI, {
+      .connect("mongodb://Nidhish:gofVgBxqPi9JOIqm@ac-lrjqvdq-shard-00-00.nuz1fzr.mongodb.net:27017,ac-lrjqvdq-shard-00-01.nuz1fzr.mongodb.net:27017,ac-lrjqvdq-shard-00-02.nuz1fzr.mongodb.net:27017/courses?ssl=true&replicaSet=atlas-3p4oc5-shard-0&authSource=admin&retryWrites=true&w=majority", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       })
