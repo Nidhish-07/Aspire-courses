@@ -23,3 +23,22 @@ export const deleteOrganization = async (req, res, next) => {
     next(createError(500, ""));
   }
 };
+
+export const updateOrganization = async (req, res, next) => {
+  if (req.params.id === req.organizationId) {
+    try {
+      const updatedOrganization = await Mentor.findByIdAndUpdate(
+        req.params.id,
+        {
+          $set: req.body,
+        },
+        { new: true }
+      );
+
+      res.status(200).send(updatedOrganization);
+    } catch (error) {
+      console.log(error);
+      next(createError(500, ""));
+    }
+  }
+};
